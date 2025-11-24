@@ -5,7 +5,7 @@ public class Class1
     public void Test()
     {
         string s = "Values: ";
-        s = s.ConcatWith(MyEnum.Value1, MyEnum.Value2);
+        s = s.ConcatWith(1, 2, 3);
     }
 }
 
@@ -13,15 +13,9 @@ public static class StringExtensions
 {
     extension(string str)
     {
-        public string ConcatWith(params MyEnum[] enumValues)
+        public string ConcatWith(params int[] intValues)
         {
-            return str + string.Join(",", enumValues);
+            return str + string.Join(",", intValues.ToString());
         }
     }
-}
-
-public enum MyEnum
-{
-    Value1,
-    Value2
 }
